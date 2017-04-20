@@ -1,0 +1,40 @@
+{
+    "version": "2.0.0",
+    "isShellCommand": true,
+    "suppressTaskName": true,
+    "tasks": [
+        {
+            "taskName": "Build Nuhaven.Collections.Generic.Extensions",
+            "command": "dotnet",
+            "args": ["build", "-nologo", "src/Nuhaven.Collections.Generic.Extensions/"],
+            "showOutput": "silent",
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "taskName": "Build All",
+            "command": "dotnet",
+            "args": ["build", "-nologo"],
+            "isBuildCommand": true,
+            "showOutput": "always",
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "taskName": "test Nuhaven.Collections.Generic.Extensions.Tests",
+            "command": "dotnet",
+            "args": ["build", "test/Nuhaven.Collections.Generic.Extensions.Tests/"],
+            "isTestCommand": true,
+            "showOutput": "always",
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "taskName": "Test All",
+            "dependsOn": ["test Nuhaven.Collections.Generic.Extensions.Tests"]
+        },
+        {
+            "taskName": "Clean",
+            "command": "dotnet",
+            "args": ["clean", "-nologo"],
+            "showOutput": "silent"
+        }
+    ]
+}
