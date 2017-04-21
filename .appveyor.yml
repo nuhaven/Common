@@ -1,0 +1,19 @@
+version: '1.0.{build}'
+image: Visual Studio 2017
+platform: [x86, x64, Any CPU]
+configuration: [Debug, Release]
+matrix:
+  fast_finish: true
+
+build:
+  parallel: true
+
+before_build:
+  - dotnet --info
+  - dotnet restore
+build_script:
+  - dotnet build
+
+test:
+  assemblies:
+    - '**\*.Tests.dll'
