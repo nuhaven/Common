@@ -14,6 +14,5 @@ before_build:
 build_script:
   - dotnet build
 
-test:
-  assemblies:
-    - '**\*.Tests.dll'
+test_script:
+  - dotnet test test/Nuhaven.Collections.Generic.Extensions.Tests/Nuhaven.Collections.Generic.Extensions.Tests.csproj
