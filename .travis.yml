@@ -1,0 +1,14 @@
+language: csharp
+dist: trusty
+
+mono: none
+dotnet: 1.0.1
+
+branches:
+  only:
+    - master
+
+script:
+  - dotnet restore
+  - dotnet build
+  - dotnet test test/Nuhaven.Collections.Generic.Extensions.Tests/Nuhaven.Collections.Generic.Extensions.Tests.csproj
