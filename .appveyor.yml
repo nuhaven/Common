@@ -13,7 +13,7 @@ before_build:
 build_script:
   - dotnet build
 
-test_script: >-
+test_script: |-
   set COVERAGE_FILE=coverage.xml
   set OPENCOVER="%USERPROFILE%\.nuget\packages\OpenCover\4.6.519\tools\OpenCover.Console.exe"
   set DOTNET="%ProgramFiles%\dotnet\dotnet.exe"
