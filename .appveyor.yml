@@ -21,4 +21,4 @@ test_script: |-
   %OPENCOVER% -register:user -target:%DOTNET% -targetargs:"test %TEST_PROJECT%" -output:%COVERAGE_FILE% -oldStyle
   set PATH=C:\Python36;C:\Python36\Scripts;%PATH%
   python -m pip install codecov
-  codecov -f %COVERAGE_FILE% -t %CODECOV_TOKEN%
+  codecov -f %COVERAGE_FILE%
