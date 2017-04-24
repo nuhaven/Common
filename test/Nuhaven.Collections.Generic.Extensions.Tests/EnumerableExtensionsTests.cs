@@ -17,7 +17,7 @@ namespace Nuhaven.Collections.Generic.Extensions.Tests
 
         [Theory]
         [MemberData(nameof(TestEnumerableIsEmptyOrNullData))]
-        public void TestListArrayIsEmpty<T>(object expectedIsEmptyOrNull, IEnumerable<T> enumerable)
+        public void EnumerableIsEmpty<T>(object expectedIsEmptyOrNull, IEnumerable<T> enumerable)
         {
             var actualIsEmptyOrNull = enumerable.IsNullOrEmpty();
             Assert.Equal(expectedIsEmptyOrNull, actualIsEmptyOrNull);
@@ -34,7 +34,7 @@ namespace Nuhaven.Collections.Generic.Extensions.Tests
 
         [Theory]
         [MemberData(nameof(TestDictionaryIsEmptyData))]
-        public void TestDictionaryIsEmpty<K,V>(object expectedIsEmptyOrNull, IDictionary<K,V> dictionary)
+        public void DictionaryIsEmpty<K,V>(object expectedIsEmptyOrNull, IDictionary<K,V> dictionary)
         {
             var actualIsEmptyOrNull = dictionary.IsNullOrEmpty();
             Assert.Equal(expectedIsEmptyOrNull, actualIsEmptyOrNull);

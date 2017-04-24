@@ -9,7 +9,7 @@ namespace Nuhaven.Collections.Generic.Extensions.Tests
     public class DictionaryExtensionsTests
     {
         [Fact]
-        public void TestDictionaryAnAddKeyValuePair()
+        public void AddKeyValuePair()
         {
             const int expectedKey = 1;
             const string expectedValue = "test";
@@ -27,7 +27,7 @@ namespace Nuhaven.Collections.Generic.Extensions.Tests
         }
 
         [Fact]
-        public void TestAddingAKeyValuePairWithNullKeyShouldThrow()
+        public void AddKeyValuePairThrowsIfItHasANullKey()
         {
             var dict = new Dictionary<string, string>();
             var kvp = new KeyValuePair<string, string>(null, "test");
@@ -37,7 +37,7 @@ namespace Nuhaven.Collections.Generic.Extensions.Tests
         }
 
         [Fact]
-        public void TestAddingAKeyValuePairWithAnAlreadyExistingKeyShouldThrow()
+        public void AddKeyValuePairThrowsIfTheKeyAlreadyExists()
         {
             var dict = new Dictionary<int, int>();
             var kvp = new KeyValuePair<int, int>(0, 1234);
@@ -49,7 +49,7 @@ namespace Nuhaven.Collections.Generic.Extensions.Tests
         }
 
         [Fact]
-        public void TestAddingAKeyValuePairToAReadOnlyDictionaryShouldThrow()
+        public void AddKeyValuePairThrowsOnAReadOnlyDictionary()
         {
             var dict = new Dictionary<int, int>();
 
@@ -62,7 +62,7 @@ namespace Nuhaven.Collections.Generic.Extensions.Tests
         }
 
         [Fact]
-        public void TestAddingAKeyValuePairToAnImmutableDictionaryShouldThrow()
+        public void AddKeyValuePairThrowsOnAnImmutableDictionary()
         {
             var dict = new Dictionary<int, int>();
 
