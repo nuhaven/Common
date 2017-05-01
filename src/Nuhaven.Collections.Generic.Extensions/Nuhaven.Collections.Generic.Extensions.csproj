@@ -8,7 +8,7 @@
     <Description>Extensions for .NET generic collections</Description>
     <Copyright>© 2017 Copyright Nuhaven. All rights reserved.</Copyright>
     <PackageId>Nuhaven.Collections.Generic.Extensions</PackageId>
-    <PackageTags>nuhaven collections generic extensiong</PackageTags>
+    <PackageTags>nuhaven collections generic extensions</PackageTags>
     <PackageLicenseName>MIT license</PackageLicenseName>
     <PackageLicenseUrl>http://opensource.org/licenses/MIT</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/nuhaven/Nuhaven.Collections.Generic.Extensions</PackageProjectUrl>
