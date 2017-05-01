@@ -7,11 +7,16 @@ cache: '%USERPROFILE%\.nuget\packages'
 build:
   parallel: true
 
-before_build:
-  - dotnet --info
-  - dotnet restore
-build_script:
-  - dotnet build
+artifacts:
+  - path: '**\*.nupkg'
+
+before_build: |-
+  dotnet --info
+  dotnet restore
+
+build_script: |-
+  dotnet build --version-suffix %APPVEYOR_BUILD_ID%
+  dotnet pack -c Release --version-suffix %APPVEYOR_BUILD_ID% -o %CD%\artifacts
 
 test_script: |-
   set COVERAGE_FILE=coverage.xml
@@ -20,5 +25,12 @@ test_script: |-
   set TEST_PROJECT="test\Nuhaven.Collections.Generic.Extensions.Tests\Nuhaven.Collections.Generic.Extensions.Tests.csproj"
   %OPENCOVER% -register:user -target:%DOTNET% -targetargs:"test %TEST_PROJECT%" -output:%COVERAGE_FILE% -oldStyle
   set PATH=C:\Python36;C:\Python36\Scripts;%PATH%
-  python -m pip install codecov
+  pip install codecov
   codecov -f %COVERAGE_FILE%
+
+-
+  branches:
+    only: [master]
+  configuration: Release
+  deploy_script: |-
+    nuget push -ApiKey %NUGET_API_KEY% .\artifacts\*.nupkg

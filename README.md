@@ -2,5 +2,5 @@
 
 [![codecov.io](http://codecov.io/github/nuhaven/Common/coverage.svg?branch=master)](http://codecov.io/github/nuhaven/Common?branch=master)
 
-# Common
-A C# collection of common functions
+# Nuhaven.Collections.Generic.Extensions
+C# extensions for the System.Collections.Generic
