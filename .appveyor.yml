@@ -28,8 +28,7 @@ test_script: |-
   pip install codecov
   codecov -f %COVERAGE_FILE%
 
--
-  branches:
+- branches:
     only: [master]
   configuration: Release
   deploy_script: |-
