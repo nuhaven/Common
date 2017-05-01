@@ -10,8 +10,8 @@
   build_script: &build_script |-
     dotnet --info
     dotnet restore
-    dotnet build --version-suffix %APPVEYOR_BUILD_ID%
-    dotnet pack -c Release --version-suffix %APPVEYOR_BUILD_ID% -o %CD%\artifacts
+    dotnet build --version-suffix %APPVEYOR_BUILD_NUMBER%
+    dotnet pack -c Release --version-suffix %APPVEYOR_BUILD_NUMBER% -o %CD%\artifacts
 
   test_script: &test_script |-
     set COVERAGE_FILE=coverage.xml

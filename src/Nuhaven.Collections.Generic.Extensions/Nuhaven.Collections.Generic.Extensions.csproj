@@ -2,7 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard1.4</TargetFramework>
-    <VersionPrefix>1.0.2</VersionPrefix>
+    <Version Condition=" '$(VersionSuffix)' == '' ">1.0.0</Version>
+    <Version Condition=" '$(VersionSuffix)' != '' ">1.0.$(VersionSuffix)</Version>
     <DebugType>full</DebugType>
     <Authors>lepsch,victorbotamedi</Authors>
     <Description>Extensions for .NET generic collections</Description>
