@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.4</TargetFramework>
+    <TargetFramework>netstandard1.6</TargetFramework>
     <Version Condition=" '$(VersionSuffix)' == '' ">1.0.0</Version>
     <Version Condition=" '$(VersionSuffix)' != '' ">1.0.$(VersionSuffix)</Version>
     <DebugType>full</DebugType>
@@ -15,6 +15,16 @@
     <PackageProjectUrl>https://github.com/nuhaven/Nuhaven.Collections.Generic.Extensions</PackageProjectUrl>
     <RepositoryUrl>https://github.com/nuhaven/Nuhaven.Collections.Generic.Extensions</RepositoryUrl>
     <PackageReleaseNotes>Fix project and repository url</PackageReleaseNotes>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
+
+  <PropertyGroup>
+      <CodeAnalysisRuleSet>../../stylecop.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!--<PackageReference Include="StyleCop.Analyzers" Version="1.0.1" PrivateAssets="All" />-->
+    <AdditionalFiles Include="../../stylecop.json" />
+  </ItemGroup>
 
 </Project>

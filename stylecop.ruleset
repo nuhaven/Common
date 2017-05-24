@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RuleSet Name="Rules for" Description="Code analysis rule." ToolsVersion="14.0">
+  <Rules AnalyzerId="StyleCop.Analyzers" RuleNamespace="StyleCop.Analyzers">
+    <Rule Id="SA1131" Action="None" /> <!--Constant values should appear on the right-hand side of comparisons-->
+    <Rule Id="SA1412" Action="None" /> <!--Store files as UTF-8 with byte order mark-->
+    <Rule Id="SA1633" Action="None" /> <!--The file header is missing or not located at the top of the file-->
+  </Rules>
+</RuleSet>
