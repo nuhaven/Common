@@ -23,7 +23,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <!--<PackageReference Include="StyleCop.Analyzers" Version="1.0.1" PrivateAssets="All" />-->
+    <PackageReference Condition=" '$(OS)' != 'Windows_NT' " Include="StyleCop.Analyzers" Version="1.0.1" PrivateAssets="All" />
     <AdditionalFiles Include="../../stylecop.json" />
   </ItemGroup>
 
