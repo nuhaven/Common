@@ -20,10 +20,11 @@
 
   <PropertyGroup>
       <CodeAnalysisRuleSet>../../stylecop.ruleset</CodeAnalysisRuleSet>
+      <SdkVersion>$([System.IO.Directory]::GetParent($(MSBuildToolsPath)/).get_Name())</SdkVersion>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Condition=" '$(OS)' != 'Windows_NT' " Include="StyleCop.Analyzers" Version="1.0.1" PrivateAssets="All" />
+  <ItemGroup Condition="'$(SdkVersion)' == '2.0.0-preview1-005977'">
+    <PackageReference Include="StyleCop.Analyzers" Version="1.0.1" PrivateAssets="All" />
     <AdditionalFiles Include="../../stylecop.json" />
   </ItemGroup>
 
