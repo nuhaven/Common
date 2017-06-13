@@ -2,7 +2,7 @@
   version: '1.0.{build}'
   image: Visual Studio 2017
   platform: Any CPU
-  cache: '%USERPROFILE%\.nuget\packages'
+  cache: '%USERPROFILE%\.nuget\packages -> **\*.csproj'
 
   build:
     parallel: true
